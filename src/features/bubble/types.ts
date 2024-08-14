@@ -16,6 +16,10 @@ export type TextInputTheme = {
   maxChars?: number;
   maxCharsWarningMessage?: string;
   autoFocus?: boolean;
+  sendMessageSound?: boolean;
+  sendSoundLocation?: string;
+  receiveMessageSound?: boolean;
+  receiveSoundLocation?: string;
 };
 
 export type UserMessageTheme = {
@@ -46,11 +50,13 @@ export type FeedbackTheme = {
 
 export type ChatWindowTheme = {
   showTitle?: boolean;
+  showAgentMessages?: boolean; // parameter to show agent reasonings when using agentflows
   title?: string;
   titleAvatarSrc?: string;
   welcomeMessage?: string;
   errorMessage?: string;
   backgroundColor?: string;
+  backgroundImage?: string;
   height?: number;
   width?: number;
   fontSize?: number;
@@ -60,6 +66,8 @@ export type ChatWindowTheme = {
   feedback?: FeedbackTheme;
   footer?: FooterTheme;
   poweredByTextColor?: string;
+  starterPrompts?: string[];
+  starterPromptFontSize?: number;
 };
 
 export type ButtonTheme = {
@@ -70,11 +78,19 @@ export type ButtonTheme = {
   bottom?: number;
   right?: number;
   dragAndDrop?: boolean; // parameter to enable drag and drop(true or false)
+  autoWindowOpen?: autoWindowOpenTheme;
 };
+
 export type ToolTipTheme = {
   showTooltip?: boolean; // parameter to enable tooltip(true or false)
   tooltipMessage?: string;
   tooltipBackgroundColor?: string;
   tooltipTextColor?: string;
   tooltipFontSize?: number;
+};
+
+export type autoWindowOpenTheme = {
+  autoOpen?: boolean; //parameter to control automatic window opening
+  openDelay?: number; // Optional parameter for delay time in seconds
+  autoOpenOnMobile?: boolean; // Optional parameter for opening on mobile
 };

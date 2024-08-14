@@ -108,6 +108,11 @@ You can also customize chatbot with different configuration
         dragAndDrop: true,
         iconColor: 'white',
         customIconSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
+        autoWindowOpen: {
+          autoOpen: true, //parameter to control automatic window opening
+          openDelay: 2, // Optional parameter for delay time in seconds
+          autoOpenOnMobile: false, //parameter to control automatic window opening in mobile
+        },
       },
       tooltip: {
         showTooltip: true,
@@ -118,14 +123,18 @@ You can also customize chatbot with different configuration
       },
       chatWindow: {
         showTitle: true,
+        showAgentMessages: true,
         title: 'Flowise Bot',
         titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
         welcomeMessage: 'Hello! This is custom welcome message',
         errorMessage: 'This is a custom error message',
         backgroundColor: '#ffffff',
+        backgroundImage: 'enter image path or link', // If set, this will overlap the background color of the chat window.
         height: 700,
         width: 400,
         fontSize: 16,
+        starterPrompts: ['What is a bot?', 'Who are you?'], // It overrides the starter prompts set by the chat flow passed
+        starterPromptFontSize: 15,
         botMessage: {
           backgroundColor: '#f7f8ff',
           textColor: '#303235',
@@ -146,6 +155,10 @@ You can also customize chatbot with different configuration
           maxChars: 50,
           maxCharsWarningMessage: 'You exceeded the characters limit. Please input less than 50 characters.',
           autoFocus: true, // If not used, autofocus is disabled on mobile and enabled on desktop. true enables it on both, false disables it on both.
+          sendMessageSound: true,
+          // sendSoundLocation: "send_message.mp3", // If this is not used, the default sound effect will be played if sendSoundMessage is true.
+          receiveMessageSound: true,
+          // receiveSoundLocation: "receive_message.mp3", // If this is not used, the default sound effect will be played if receiveSoundMessage is true.
         },
         feedback: {
           color: '#303235',
@@ -155,7 +168,7 @@ You can also customize chatbot with different configuration
           text: 'Powered by',
           company: 'Flowise',
           companyLink: 'https://flowiseai.com',
-        },
+        }
       },
     },
   });
